@@ -1,5 +1,6 @@
 {
   "name": "json-visualizer",
+  "homepage": "https://Shaikh-Ubaid.github.io/ast_asr_json_visualizer",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
