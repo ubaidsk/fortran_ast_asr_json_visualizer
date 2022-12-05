@@ -56,14 +56,14 @@ class Graph {
             let neigh = obj[prop];
             if (typeof neigh === 'object') {
                 if (neigh.hasOwnProperty("node")) {
-                    this.createEdge(cur_node.idx, neigh, prop, prop);
+                    this.createEdge(cur_node.idx, neigh, prop);
                 } else {
                     if (neigh.length > 0) {
                         for (let i in neigh) {
                             let arrayElement = neigh[i];
                             if (typeof arrayElement === 'object') {
                                 if (arrayElement.hasOwnProperty("node")) {
-                                    this.createEdge(cur_node.idx, arrayElement, prop, `${prop}[${i}]`);
+                                    this.createEdge(cur_node.idx, arrayElement, `${prop}[${i}]`);
                                 } else {
                                     console.log("ERROR: Unexpected 2D Array found");
                                 }
@@ -84,13 +84,12 @@ class Graph {
         this.nodes.push({ id: `${cur_node.idx}`, data: { label: <TreeNode node={cur_node} /> }, nodeHeight: 70 + 20 * (cur_node.literals.length) });
     }
 
-    createEdge(parent_idx, cur_node, edge_src, edge_label) {
+    createEdge(parent_idx, cur_node, edge_label) {
         this.edges.push({
             id: `${parent_idx}-${this.idx}`,
             source: `${parent_idx}`,
             target: `${this.idx}`,
             type: 'custom',
-            sourceHandler: edge_src,
             data: { text: edge_label },
         });
         this.createNode(cur_node);
