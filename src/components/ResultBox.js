@@ -97,21 +97,27 @@ class Graph {
     }
 }
 
-
+function parseJson(json) {
+    try {
+        const data = JSON.parse(json);
+        return { success: true, data: data };
+    } catch (e) {
+        console.log(e);
+        return { success: false, data: '' };
+    }
+}
 
 function ResultBox({ height, json }) {
+    const parsed_json = parseJson(json);
+    if (!parsed_json.success)
+        return "Could not parse json";
+
     var g = new Graph();
-    g.createNode(json);
+    g.createNode(parsed_json.data);
     var [layoutedNodes, layoutedEdges] = getLayoutedElements(g.nodes, g.edges);
 
     return (
         <div className="w-full bg-base-200" style={{ height: height }}>
-            {/* <button
-                className='btn mt-2 ml-4 absolute z-10 text-xl'
-                onClick={() => { setNodes(initialNodes); setEdges(initialEdges) }}
-            >
-                <i className="ri-restart-line"></i>
-            </button> */}
             <Visualizer initialNodes={layoutedNodes} initialEdges={layoutedEdges} />
         </div>
     );
