@@ -1,5 +1,5 @@
 import { useState, useCallback, useMemo, useEffect } from 'react';
-import ReactFlow, { Background, Controls, applyNodeChanges, applyEdgeChanges } from 'reactflow';
+import ReactFlow, { Background, Controls, applyNodeChanges, applyEdgeChanges, MiniMap } from 'reactflow';
 
 import CustomEdgeLabel from './CustomEdgeLabel';
 
@@ -38,6 +38,7 @@ function Visualizer({ initialNodes, initialEdges }) {
             >
                 <Background />
                 <Controls />
+                <MiniMap nodeColor={"#ffc107"} maskStrokeColor="black" maskStrokeWidth="3" pannable zoomable/>
             </ReactFlow>
         </>
     );

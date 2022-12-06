@@ -1,7 +1,7 @@
 import dagre from 'dagre';
 
-import TreeNode from './TreeNode';
-import Visualizer from "./Visualizer";
+import TreeNode from '../components/TreeNode';
+import Visualizer from "../components/Visualizer";
 
 
 const getLayoutedElements = (nodes, edges, direction = 'TB') => {
@@ -106,7 +106,7 @@ function parseJson(json) {
     }
 }
 
-function ResultBox({ height, json }) {
+function generateGraph(json) {
     const parsed_json = parseJson(json);
     if (!parsed_json.success)
         return "Could not parse json";
@@ -115,11 +115,7 @@ function ResultBox({ height, json }) {
     g.createNode(parsed_json.data);
     var [layoutedNodes, layoutedEdges] = getLayoutedElements(g.nodes, g.edges);
 
-    return (
-        <div className="w-full bg-base-200" style={{ height: height }}>
-            <Visualizer initialNodes={layoutedNodes} initialEdges={layoutedEdges} />
-        </div>
-    );
+    return <Visualizer initialNodes={layoutedNodes} initialEdges={layoutedEdges} />;
 }
 
-export default ResultBox
+export default generateGraph
