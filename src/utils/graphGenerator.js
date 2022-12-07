@@ -81,7 +81,12 @@ class Graph {
             }
         }
 
-        this.nodes.push({ id: `${cur_node.idx}`, data: { label: <TreeNode node={cur_node} /> }, nodeHeight: 70 + 20 * (cur_node.literals.length) });
+        this.nodes.push({
+            id: `${cur_node.idx}`,
+            data: { label: <TreeNode node={cur_node} /> },
+            nodeHeight: 70 + 20 * (cur_node.literals.length),
+            loc: cur_node.loc
+        });
     }
 
     createEdge(parent_idx, cur_node, edge_label) {

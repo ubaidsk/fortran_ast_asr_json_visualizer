@@ -39,7 +39,7 @@ function TextBox({ height, srcCode, setSrcCode, outputHandler }) {
 				</ul>
 			</div>
 			<div className="w-full" style={{ height: `calc(${height} - 56px)` }}>
-				<textarea className="w-full border-solid border-2 border-sky-500 h-full p-2" value={srcCode} onChange={e => setSrcCode(e.target.value)}></textarea>
+				<textarea id="my-textarea" className="w-full border-solid border-2 border-sky-500 h-full p-2" value={srcCode} onChange={e => setSrcCode(e.target.value)}></textarea>
 			</div>
 		</div>
 	)
