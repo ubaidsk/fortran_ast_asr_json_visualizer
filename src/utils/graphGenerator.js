@@ -49,6 +49,7 @@ class Graph {
     }
 
     createNode(cur_node) {
+        let nodeRows = 0;
         cur_node.idx = this.idx++;
         cur_node.literals = [];
         let obj = cur_node.fields;
@@ -69,22 +70,31 @@ class Graph {
                                 }
                             } else {
                                 cur_node.literals.push([`${prop}[${i}]`, `${arrayElement}`]);
+                                nodeRows++;
+                                if (`${prop}[${i}]`.length + `${arrayElement}`.length > 20) {
+                                    nodeRows++;
+                                }
                             }
                         }
                     } else {
                         // 0 length array, show as literal
                         cur_node.literals.push([prop, "[]"]);
+                        nodeRows++;
                     }
                 }
             } else {
                 cur_node.literals.push([prop, `${neigh}`]);
+                nodeRows++;
+                if (prop.length + `${neigh}`.length > 20) {
+                    nodeRows++;
+                }
             }
         }
 
         this.nodes.push({
             id: `${cur_node.idx}`,
             data: { label: <TreeNode node={cur_node} /> },
-            nodeHeight: 70 + 20 * (cur_node.literals.length),
+            nodeHeight: 70 + 20 * nodeRows,
             loc: cur_node.loc
         });
     }
