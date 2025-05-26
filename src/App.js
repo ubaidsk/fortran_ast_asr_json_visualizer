@@ -6,7 +6,7 @@ import NoPage from "./pages/NoPage";
 
 function App() {
 	return (
-    <BrowserRouter>
+    <BrowserRouter basename="/fortran_ast_asr_json_visualizer">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
