@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+# 🌳 Fortran AST/ASR JSON Visualizer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![React](https://img.shields.io/badge/React-18.2.0-61DAFB?logo=react)](https://reactjs.org/)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-3.2.4-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
+[![WebAssembly](https://img.shields.io/badge/WebAssembly-Ready-654FF0?logo=webassembly)](https://webassembly.org/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-Deployed-222222?logo=github)](https://ubaidsk.github.io/fortran_ast_asr_json_visualizer/)
 
-## Available Scripts
+An interactive web-based visualization tool for exploring and understanding Fortran Abstract Syntax Trees (AST) and Abstract Semantic Representation (ASR). This project brings modern web technologies to Fortran development, making it easier to understand and debug Fortran code structure.
 
-In the project directory, you can run:
+This uses [LFortran](https://lfortran.org/) for generating the AST and ASR Json from fortran code.
 
-### `npm start`
+## ✨ Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 🎨 **Interactive Visualization**: Dynamic, zoomable tree visualization of AST/ASR structures
+- 🔄 **Real-time Updates**: Instantly see changes as you modify JSON input
+- 🌐 **WebAssembly Integration**: Powered by LFortran's WASM compilation
+- 🎯 **User-friendly Interface**: Clean, modern UI with dark mode support
+- 📱 **Responsive Design**: Works seamlessly on desktop and mobile devices
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Live Demo
 
-### `npm test`
+Try it now: [https://ubaidsk.github.io/fortran_ast_asr_json_visualizer/](https://ubaidsk.github.io/fortran_ast_asr_json_visualizer/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠️ Setup & Installation
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This setups up `node` on your local system. Follow this if you don't have `node` already installed.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Install NVM (Node Version Manager)**
+   ```bash
+   # For macOS and Linux
+   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+   
+   # Add to your ~/.zshrc
+   export NVM_DIR="$HOME/.nvm"
+   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Install Node.js**
+   ```bash
+   nvm install 16
+   nvm use 16
+   ```
 
-### `npm run eject`
+3. **Verify Installation**
+   ```bash
+   node --version
+   npm --version
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Project Setup
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/ubaidsk/fortran_ast_asr_json_visualizer.git
+   cd fortran_ast_asr_json_visualizer
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. **Start development server**
+   ```bash
+   npm start
+   ```
 
-## Learn More
+4. **Build for production**
+   ```bash
+   npm run build
+   npm run deploy
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🔧 Technical Stack
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Core Technologies
+- **React 18**: Modern UI development with hooks and functional components
+- **WebAssembly**: LFortran compilation for AST/ASR processing
+- **TailwindCSS**: Utility-first CSS framework
+- **DaisyUI**: Tailwind CSS component library
 
-### Code Splitting
+### Visualization
+- **React Flow**: Interactive node-based visualization
+- **Dagre**: Graph layout and positioning algorithm
+- **Remix Icons**: Modern icon library
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Development Tools
+- **PostCSS**: CSS processing and optimization
+- **Create React App**: React application bootstrapping
+- **GitHub Pages**: Deployment and hosting
 
-### Analyzing the Bundle Size
+## 🤝 Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+We welcome all contributions, big or small!
 
-### Making a Progressive Web App
+## 🆕 Bug/Feature Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+For reporting bugs or suggestions, please [open an issue](https://github.com/ubaidsk/fortran_ast_asr_json_visualizer/issues) in the GitHub repository.
 
-### Advanced Configuration
+## 📄 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+Made with ❤️ for the Fortran Community
